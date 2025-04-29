@@ -1,0 +1,56 @@
+.site_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #DAC0AC;
+    padding: 10px 20px;
+    flex-wrap: nowrap;
+  }
+  
+  .logo {
+    width: 100px;
+    border-radius: 100%;
+    border: 2px solid black;
+  }
+  
+  /* Conteneur des liens */
+  .AcceuilTitre {
+    display: flex;
+    justify-content: center;
+    /* permet de remplir l'espace vide proportionelle dans le conteneur flexbox */
+    flex: 1;
+    gap: 200px;
+  }
+  
+  .AcceuilTitre a {
+    color: black;
+    font-size: 2em;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 10px;
+  }
+
+  
+  /* Responsive : petit écran */
+  @media (max-width: 768px) {
+    .site_header {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .logo {
+      width: 60px;
+    }
+  
+    .AcceuilTitre {
+      justify-content: center;
+      flex: 1;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  
+    .AcceuilTitre a {
+      font-size: 1.2em;
+      padding: 5px 8px;
+    }
+  }
