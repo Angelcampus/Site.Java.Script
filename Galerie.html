@@ -1,0 +1,10 @@
+<script> 
+    const url = "https://api.adviceslip.com/advice";
+    fetch(url)
+    .then(Response=> response.json())
+    .then(data=>{
+        let adivceElement = document.createElement("p");
+        adivceElement.innerHTML = `conseil du jour : "${data.slip.advice}"`
+        document.body.appendChild(adivceElement);
+    })
+    </script>

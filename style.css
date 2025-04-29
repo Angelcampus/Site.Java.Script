@@ -1,10 +1,14 @@
+/* css Header */
 .site_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #DAC0AC;
     padding: 10px 20px;
+    margin-bottom: 50px;
     flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
   }
   
   .logo {
@@ -21,7 +25,6 @@
     flex: 1;
     gap: 200px;
   }
-  
   .AcceuilTitre a {
     color: black;
     font-size: 2em;
@@ -29,17 +32,39 @@
     position: relative;
     padding: 5px 10px;
   }
+    /* css body */
+body {
+    margin: 0;
+    padding: 0;
+}
+#pokemonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imageWraper{
+    margin-top: 20%;
+    background-color: #EDE0D6;
+    border: 2px solid black;
+}
+.header{
+    display: flex;
+}
 
-  
-  /* Responsive : petit écran */
+#buttonPoke{
+    margin-left: 45%;
+    background: linear-gradient(#e66465, #EDE0D6);
+    font-size: 1.5em;
+}
   @media (max-width: 768px) {
     .site_header {
       flex-direction: row;
       align-items: center;
+      margin-bottom: 30px;
     }
   
     .logo {
-      width: 60px;
+      width: 10%;
     }
   
     .AcceuilTitre {
@@ -53,4 +78,18 @@
       font-size: 1.2em;
       padding: 5px 8px;
     }
+    #wrapper {
+        padding-top:20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 1em;
+    }
+    #imagePoke{
+        width: 80px;
+  }
+  #buttonPoke{
+    font-size: 0.8em;
+  }
   }
