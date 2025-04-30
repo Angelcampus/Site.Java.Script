@@ -10,28 +10,37 @@
     width: 100%;
     height: 100%;
   }
-  
-  .logo {
+.menu {
+  font-size: 1.4em;
+  background: linear-gradient(#e66465, #EDE0D6);
+}
+
+.dropdown{
+  position:  relative;
+  display: inline-block;
+  padding-right: 100px;
+}
+.dropdown-child{
+  display:none;
+  background-color: bisque;
+  min-width: 200px;
+}
+.dropdown-child a{
+  color: black;
+  padding: 20px;
+  display: block;
+}
+
+.dropdown:hover .dropdown-child{
+  display: block;
+} 
+ 
+.logo {
     width: 100px;
     border-radius: 100%;
     border: 2px solid black;
   }
   
-  /* Conteneur des liens */
-  .AcceuilTitre {
-    display: flex;
-    justify-content: center;
-    /* permet de remplir l'espace vide proportionelle dans le conteneur flexbox */
-    flex: 1;
-    gap: 200px;
-  }
-  .AcceuilTitre a {
-    color: black;
-    font-size: 2em;
-    text-decoration: none;
-    position: relative;
-    padding: 5px 10px;
-  }
     /* css body */
 body {
     margin: 0;
@@ -43,19 +52,35 @@ body {
     align-items: center;
 }
 .imageWraper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: auto;
     margin-top: 20%;
     background-color: #EDE0D6;
     border: 2px solid black;
+    width: auto;
+    height: auto;
 }
 .header{
     display: flex;
 }
+.name {
+    padding-left: 5px;
+}
+.number {
+    padding-left: 5px;
+}
 
+.button{
+  display: flex;
+  justify-content: space-evenly;
+}
 #buttonPoke{
-    margin-left: 45%;
     background: linear-gradient(#e66465, #EDE0D6);
     font-size: 1.5em;
 }
+
   @media (max-width: 768px) {
     .site_header {
       flex-direction: row;
@@ -78,14 +103,7 @@ body {
       font-size: 1.2em;
       padding: 5px 8px;
     }
-    #wrapper {
-        padding-top:20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        font-size: 1em;
-    }
+
     #imagePoke{
         width: 80px;
   }

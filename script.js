@@ -1,7 +1,9 @@
 let button = document.getElementById("buttonPoke");
 let container = document.getElementById("pokemonContainer");
-
+let buttonReload = document.getElementById("reloadPokemon");
+// let nombrePokemon=4;
 const changePokemon = async () => {
+// for(let i=0;i<nombrePokemon;i++){} 
     let randomNumber = Math.ceil(Math.random() * 150);
     let requestString = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
     let data = await fetch(requestString);
@@ -21,6 +23,13 @@ const changePokemon = async () => {
     `;
     // pour que divpost devienne enfant pour le mettre dans le html 
     container.appendChild(divPost);
-};
 
+};
+changePokemon();
 buttonPoke.addEventListener("click", changePokemon);
+buttonReload.addEventListener("click", function () {
+    container.innerHTML = ""; 
+});
+
+
+
