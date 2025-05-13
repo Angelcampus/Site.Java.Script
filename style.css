@@ -41,7 +41,7 @@
     border: 2px solid black;
   }
   
-    /* css body */
+/* ACCEUIL CSS */
 body {
     margin: 0;
     padding: 0;
@@ -80,6 +80,50 @@ body {
     background: linear-gradient(#e66465, #EDE0D6);
     font-size: 1.5em;
 }
+/* GALERIE CSS */
+.controls {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  background: linear-gradient(#e66465, #EDE0D6);
+  color: black;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.Galerie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.Galerie img {
+  width: 80%;
+  height: 100%;
+  max-height: 300px;
+  border-radius: 5px ;
+  border: 2px solid black;
+}
+
+.mosaic .item {
+width: 31%;
+}
+
+.column .item {
+  width: 50%;
+  max-width: 600px;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
 
   @media (max-width: 768px) {
     .site_header {
@@ -87,7 +131,10 @@ body {
       align-items: center;
       margin-bottom: 30px;
     }
-  
+    .mosaic .item {
+    width: 47%;
+    }
+
     .logo {
       width: 10%;
     }

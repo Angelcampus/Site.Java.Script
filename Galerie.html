@@ -1,10 +1,45 @@
-<script> 
-    const url = "https://api.adviceslip.com/advice";
-    fetch(url)
-    .then(Response=> response.json())
-    .then(data=>{
-        let adivceElement = document.createElement("p");
-        adivceElement.innerHTML = `conseil du jour : "${data.slip.advice}"`
-        document.body.appendChild(adivceElement);
-    })
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Galerie</title>
+</head>
+<body>
+    <header class="site_header">   
+        <img class="logo" src="IMAGES/LOGO SITE.jpg" alt="Logo du site" /> 
+        <div class="dropdown"> 
+            <button class="menu">Menu</button>
+            <div class="dropdown-child">
+                <a href="index.html" >Acceuil</a> 
+                <a href="Galerie.html" >Galerie</a> 
+                <a href="Jeux.html" >Jeux</a> 
+            </div>
+        </div>     
+</header>
+<main>
+    <div class="controls">
+        <button onclick="Changevue('mosaic')">Mosaïque</button>
+        <button onclick="Changevue('column')">Colonne</button>
+      </div>
+    
+      <div class="Galerie mosaic" id="Galerie">
+        <div class="item"><img src="IMAGES/Pikachu.jpg" alt="Image du Pokémon Pikachu"></div>
+        <div class="item"><img src="IMAGES/Evoli.jpg" alt="IImage du Pokémon Evoli"></div>
+        <div class="item"><img src="IMAGES/Bulbizarre.jpg" alt="Image du Pokémon Bulbizarre"></div>
+        <div class="item"><img src="IMAGES/Carapuce.jpg" alt="Image du Pokémon Carapuce"></div>
+        <div class="item"><img src="IMAGES/Salameche.jpg" alt="Image du Pokémon Salameche"></div>
+        <div class="item"><img src="IMAGES/Tiplouf.jpg" alt="Image du Pokémon Tiplouf"></div>
+      </div>
+    
+      <script>
+        function Changevue(type) {
+          const gallery = document.getElementById('Galerie');
+          gallery.className = 'Galerie ' + type;
+        }
+      </script>
     </script>
+    </main>
+</body>
+</html>
