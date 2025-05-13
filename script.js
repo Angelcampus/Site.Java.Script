@@ -1,6 +1,9 @@
+// JS INDEX
 let button = document.getElementById("buttonPoke");
 let container = document.getElementById("pokemonContainer");
 let buttonReload = document.getElementById("reloadPokemon");
+let buttonDevine = document.getElementById("buttonDevine");
+let devineLePokemon = document.getElementById("devineLePokemon");
 // let nombrePokemon=4;
 const changePokemon = async () => {
 // for(let i=0;i<nombrePokemon;i++){} 
@@ -32,4 +35,34 @@ buttonReload.addEventListener("click", function () {
 });
 
 
+// JS GALERIE
+function Changevue(type) {
+       const gallery = document.getElementById('Galerie');
+        gallery.className = 'Galerie ' + type;
+        }
+        function addImage(event) {
+         const file = event.target.files[0];
+        if (!file) return;
 
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+
+        const item = document.createElement('div');
+        item.className = 'item';
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerText = '✖';
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.onclick = function () {
+        item.remove(); // Supprime toute la div .item
+        };
+
+        item.appendChild(img);
+        item.appendChild(deleteBtn); // On ajoute le bouton dans l'image
+        document.getElementById('Galerie').appendChild(item);
+        };
+        reader.readAsDataURL(file);
+        }
