@@ -124,6 +124,19 @@ width: 31%;
 .item:hover img {
   transform: scale(1.05);
 }
+.item {
+  position: relative;
+}
+
+.delete-btn {
+  position: relative;
+  
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+
 
   @media (max-width: 768px) {
     .site_header {

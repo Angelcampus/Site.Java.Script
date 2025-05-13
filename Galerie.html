@@ -22,6 +22,8 @@
     <div class="controls">
         <button onclick="Changevue('mosaic')">Mosaïque</button>
         <button onclick="Changevue('column')">Colonne</button>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="addImage(event)">
+        <button onclick="document.getElementById('imageInput').click()">Ajouter une image</button>
       </div>
     
       <div class="Galerie mosaic" id="Galerie">
@@ -32,14 +34,9 @@
         <div class="item"><img src="IMAGES/Salameche.jpg" alt="Image du Pokémon Salameche"></div>
         <div class="item"><img src="IMAGES/Tiplouf.jpg" alt="Image du Pokémon Tiplouf"></div>
       </div>
-    
-      <script>
-        function Changevue(type) {
-          const gallery = document.getElementById('Galerie');
-          gallery.className = 'Galerie ' + type;
-        }
-      </script>
+      <script src="./script.js">
     </script>
+      
     </main>
 </body>
 </html>
