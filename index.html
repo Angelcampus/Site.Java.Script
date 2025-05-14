@@ -7,6 +7,7 @@
     <title>AGAMA</title>
 </head>
 <body>
+
     <header class="site_header">   
             <img class="logo" src="IMAGES/LOGO SITE.jpg" alt="Logo du site" /> 
             <div class="dropdown"> 
@@ -18,6 +19,25 @@
                 </div>
             </div>     
     </header>
+    <div class="Formulaire">
+        <form method="get">
+        <div class="question">
+            <label for="name">Quel est le nom du Pokemon ?</label>
+            <input type="name" id="name" name="user_name" />
+        </div>
+        <div class="question">
+            <label for="number">Quel est le numéro du Pokemon ?</label>
+            <input type="number" id="number" name="user_number" />
+        </div>
+        <div class="question" >
+            <label for="avatar">Montre moi ton Design</label>
+            <input type="file" id="avatar" name="avatar" accept="image/*" />
+        </div>
+        <div class="butform">
+            <button id="formPoke">Envoyer mon nouveau Pokemon</button>
+        </div>
+        </form>
+    </div>
     <div class="button">
         <button id="reloadPokemon">Actualiser</button>
         <button id="buttonPoke">Nouveau Pokémon !</button>

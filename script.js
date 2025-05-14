@@ -92,3 +92,28 @@ function addImage(event) {
     }
 
 
+const formPoke = async (event) => {
+    event.preventDefault();
+    let namePoke = document.getElementById("name").value;
+    let numbPoke= document.getElementById("number").value;
+    let imagePoke= document.getElementById("avatar").files[0];
+    
+    // variable toute la carte pokemon
+    let divPost = document.createElement("div");
+    divPost.classList.add("wrapper");
+    // creation de html dans le div post  sert à faire lien entre le java `` 
+        divPost.innerHTML = `
+        <div class="imageWraper">
+            <img class="imagePoke" src="${imagePoke}" alt="${namePoke}" />   
+            <div class="header">
+                <div class="number">#${numbPoke}</div>
+                <div class="name">${namePoke}</div>
+             </div>
+        </div>
+    `;
+    // pour que divpost devienne enfant pour le mettre dans le html 
+    container.appendChild(divPost);
+    
+};
+let buttonForm = document.getElementById("formPoke");
+buttonForm.addEventListener("click", formPoke);

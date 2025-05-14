@@ -46,6 +46,18 @@ body {
     margin: 0;
     padding: 0;
 }
+.Formulaire{
+  display: flex;
+  justify-content: baseline;
+}
+.question {
+  margin-top: 5px;
+}
+.butform{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
 #pokemonContainer{
     display: flex;
     flex-direction: column;
