@@ -1,4 +1,28 @@
-// JS INDEX
+  // PUB
+
+  // permet d'attendre le chargemetn de la page html obliger de mettre ce js en haut pour que la page charge avant de lancer le js 
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.ad-banner img');
+    let current = 0;
+
+    function showSlide(idx) {
+      slides.forEach((img, i) =>
+        img.classList.toggle('active', i === idx)
+      );
+    }
+
+    // Affiche la première image dès le chargement
+    showSlide(current);
+
+    // Change d’image toutes les 4 secondes, en boucle infinie
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 4000);
+  });
+
+//  INDEX
+
 let button = document.getElementById("buttonPoke");
 let container = document.getElementById("pokemonContainer");
 let buttonReload = document.getElementById("reloadPokemon");
@@ -35,34 +59,36 @@ buttonReload.addEventListener("click", function () {
 });
 
 
-// JS GALERIE
+//  GALERIE
+
 function Changevue(type) {
-       const gallery = document.getElementById('Galerie');
-        gallery.className = 'Galerie ' + type;
-        }
-        function addImage(event) {
-         const file = event.target.files[0];
-        if (!file) return;
+    const gallery = document.getElementById('Galerie');
+    gallery.className = 'Galerie ' + type;
+    }
+function addImage(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+     const reader = new FileReader();
 
-        const reader = new FileReader();
+    reader.onload = function(e) {
+    const img = document.createElement('img');
+    img.src = e.target.result;
 
-        reader.onload = function(e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
+    const item = document.createElement('div');
+    item.className = 'item';
 
-        const item = document.createElement('div');
-        item.className = 'item';
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = '✖';
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.onclick = function () {
+    item.remove(); // Supprime toute la div .item
+    };
 
-        const deleteBtn = document.createElement('button');
-        deleteBtn.innerText = '✖';
-        deleteBtn.className = 'delete-btn';
-        deleteBtn.onclick = function () {
-        item.remove(); // Supprime toute la div .item
-        };
+    item.appendChild(img);
+    item.appendChild(deleteBtn); // On ajoute le bouton dans l'image
+    document.getElementById('Galerie').appendChild(item);
+    };
+    reader.readAsDataURL(file);
+    }
 
-        item.appendChild(img);
-        item.appendChild(deleteBtn); // On ajoute le bouton dans l'image
-        document.getElementById('Galerie').appendChild(item);
-        };
-        reader.readAsDataURL(file);
-        }
+
